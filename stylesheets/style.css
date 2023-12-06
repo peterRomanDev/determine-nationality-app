@@ -89,7 +89,7 @@ body {
 
 .dashboard__admin-img {
     --img-width: 10rem;
-    --fs-admin-img: 5rem;
+    --fs-admin-img: 4rem;
     
     width: var(--img-width);
     height: var(--img-width);
@@ -130,7 +130,30 @@ body {
     color: var(--clr-accent-green);
 }
 
+.dashboard-btn-toggle {
+    --fs-btn-toggle: 0.75rem;
+    
+    width: 1rem;
+    height: 3rem;
+    border: 0;
+
+    background-color: var(--clr-grey-500);
+    color: var(--clr-grey-100);
+    font-size: var(--fs-btn-toggle);
+
+    transition: background-color 125ms;
+}
+
+.dashboard-btn-toggle:hover {
+    background-color: var(--clr-grey-400);
+    cursor: pointer;
+}
+
 /* dashboard items positioning */
+.dashboard-wrapper {
+    display: flex;
+}
+
 .dashboard,
 .dashboard--options {
     display: flex;

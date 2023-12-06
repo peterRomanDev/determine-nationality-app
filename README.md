@@ -1,9 +1,19 @@
 # SmallClaims Assignment
 ## Tasks
+### Styling and functionality
 * dashboard
     - [x] create dashboard in HTML
-    - [] style dashboard in CSS
-    - [] make dashboard responsive for desktop, tablet and mobile
+    - [x] style dashboard in CSS
+    - [] show/hide dashboard by clicking the toggle button
+* list of users
+    - [] create a list of users in HTML
+    - [] style the list of users in CSS
+    - [] highlight clicked user
+* user window
+    - [] create the user window in HTML
+    - [] style the user window in CSS
+- [] make the entire website responsive for mobile, tablet and desktop
+### Displaying Users
 * fetch users
     - [] fetch the users from the JSON placeholder API
     - [] display the users from the JSON placeholder API in the list of users
