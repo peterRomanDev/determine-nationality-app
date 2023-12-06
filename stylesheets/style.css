@@ -151,8 +151,8 @@ body {
 .sidebar--btn-toggle {
     --fs-btn-toggle: 0.75rem;
     
-    width: 1rem;
-    height: var(--sidebar--btn-toggle);
+    width: var(--sidebar--btn-toggle-width);
+    height: var(--sidebar--btn-toggle-height);
     border: 0;
 
     background-color: var(--clr-grey-500);
@@ -173,7 +173,8 @@ body {
 }
 
 .sidebar-tooltip {
-    height: var(--sidebar--btn-toggle);
+    width: 9rem;
+    height: var(--sidebar--btn-toggle-height);
     padding: 1em;
 
     color: var(--clr-grey-500);
@@ -186,8 +187,16 @@ body {
 
 
 /* sidebar items positioning */
-.sidebar-wrapper {
-    display: flex;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar--btn-toggle {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
 }
 
 .sidebar,
@@ -227,6 +236,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: absolute;
+    left: calc(var(--sidebar-width) + var(--sidebar--btn-toggle-width));
 }
 
 
@@ -350,6 +362,7 @@ body {
 @media (min-width: 1200px) {
     :root {
         --sidebar-width: 20rem;
-        --sidebar--btn-toggle: 3rem;
+        --sidebar--btn-toggle-width: 1rem;
+        --sidebar--btn-toggle-height: 3rem;
     }
 }
