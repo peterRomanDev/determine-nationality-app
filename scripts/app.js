@@ -11,6 +11,11 @@ dashboardWrapper.addEventListener('click', e => {
             dashboardWrapper.classList.add('dashboard-hidden');
             dashboardTooltip.textContent = 'Show Dashboard';
         }
+    } else if(e.target.classList.contains('dashboard__options-btn')) {
+        const dashboardOptionsBtns = document.querySelectorAll('.dashboard__options-btn');
+
+        dashboardOptionsBtns.forEach(btn => btn.classList.remove('dashboard-option-active'));
+        e.target.classList.add('dashboard-option-active');
     }
 });
 
