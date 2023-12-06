@@ -8,6 +8,7 @@
     --clr-grey-500: hsl(0, 0%, 10%);
     --clr-black: black;
     --clr-accent-green: hsl(120, 100%, 82%);
+    --clr-accent-blue: hsl(200, 40%, 82%);
 
     --fs-100: 1rem;
     --fs-200: 1.25rem;
@@ -58,6 +59,15 @@
 
 body {
     background-color: var(--clr-grey-100);
+}
+
+
+
+
+
+/* app positioning */
+.app {
+    display: flex;
 }
 
 
@@ -134,6 +144,7 @@ body {
 
 .sidebar__options-btn:hover {
     color: var(--clr-accent-green);
+
     cursor: pointer;
 }
 
@@ -157,6 +168,7 @@ body {
 
 .sidebar--btn-toggle:hover {
     background-color: var(--clr-grey-400);
+
     cursor: pointer;
 }
 
@@ -222,10 +234,55 @@ body {
 
 
 /* list of users styling */
-.list-of-users-wrapper {
-    background-color: red;
-    width: 20rem;
-    height: 20rem;
+.list-of-users {
+    width: 25rem;
+    padding: 2rem;
+    box-shadow: 0 0 2rem -1rem var(--clr-grey-500);
+    border-radius: var(--br-5px);
+
+    background-color: var(--clr-grey-200);
+}
+
+.list-of-users__heading {
+    font-size: var(--fs-500);
+    font-weight: var(--fw-bold);
+}
+
+.list-of-users__list {
+    border-radius: var(--br-5px);
+    
+    font-size: var(--fs-200);
+    list-style: none;
+}
+
+.user {
+    padding: 0.5em 1em;
+    border-radius: var(--br-5px);
+    
+    transition:
+        background-color 125ms ease-out,
+        box-shadow 125ms ease-out;
+}
+
+.user:hover {
+    background-color: var(--clr-grey-100);
+    box-shadow: 0 0.3rem 1.5rem -1rem var(--clr-grey-500);
+
+    cursor: pointer;
+}
+
+/* list of users positioning */
+
+.list-of-users {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list-of-users__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 
