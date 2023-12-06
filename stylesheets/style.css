@@ -1,0 +1,77 @@
+/* Mobile */
+:root {
+    --clr-white: white;
+    --clr-grey-100: hsl(0, 0%, 90%)ff;
+    --clr-grey-200: hsl(0, 0%, 75%)ff;
+    --clr-grey-300: hsl(0, 0%, 50%)ff;
+    --clr-grey-400: hsl(0, 0%, 25%)ff;
+    --clr-grey-500: hsl(0, 0%, 10%)ff;
+    --clr-black: black;
+    --clr-accent-green: hsl(120, 100%, 90%);
+
+    --fs-100: 1rem;
+    --fs-200: 1.25rem;
+    --fs-300: 1.5rem;
+    --fs-400: 1.75rem;
+    --fs-500: 2rem;
+    --fs-600: 2.25rem;
+    --fs-700: 2.5rem;
+    --fs-800: 2.75rem;
+    --fs-900: 3rem;
+
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+    --br-10px: 10px;
+    --br-15px: 15px;
+    --br-25px: 25px;
+    --br-50px: 50px;
+    --br-50-percent: 50%;
+
+    --pos-static: static;
+    --pos-relative: relative;
+    --pos-absolute: absolute;
+    --pos-sticky: sticky;
+
+    --d-inline: inline;
+    --d-block: block;
+    --d-flex: flex;
+    --d-grid: grid;
+    --d-none: none;
+
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: var(--fw-normal);
+}
+
+.strong {
+    font-weight: var(--fw-bold);
+}
+
+.em {
+    font-style: italic;
+}
+
+.d-none {
+    display: none;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+
+}
