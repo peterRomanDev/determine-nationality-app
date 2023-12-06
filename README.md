@@ -2,13 +2,14 @@
 ## Tasks
 ### Styling and functionality
 * dashboard
-    - [x] create dashboard in HTML
-    - [x] style dashboard in CSS
-    - [x] show/hide dashboard by clicking the toggle button
+    - [x] create dashboard (HTML)
+    - [x] style dashboard (CSS)
+    - [x] show/hide dashboard by clicking the toggle button (JS)
+    - [x] highlight clicked button (JS)
 * list of users
-    - [] create a list of users in HTML
-    - [] style the list of users in CSS
-    - [] highlight clicked user
+    - [x] create a list of users (HTML)
+    - [] style the list of users (CSS)
+    - [] highlight clicked user (JS)
 * user window
     - [] create the user window in HTML
     - [] style the user window in CSS
