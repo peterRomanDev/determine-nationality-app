@@ -1,7 +1,7 @@
 # SmallClaims Assignment
 ## Tasks
 * dashboard
-    - [] create dashboard in HTML
+    - [x] create dashboard in HTML
     - [] style dashboard in CSS
     - [] make dashboard responsive for desktop, tablet and mobile
 * fetch users

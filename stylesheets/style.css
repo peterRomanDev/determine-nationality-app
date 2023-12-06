@@ -1,13 +1,13 @@
 /* Mobile */
 :root {
     --clr-white: white;
-    --clr-grey-100: hsl(0, 0%, 90%)ff;
-    --clr-grey-200: hsl(0, 0%, 75%)ff;
-    --clr-grey-300: hsl(0, 0%, 50%)ff;
-    --clr-grey-400: hsl(0, 0%, 25%)ff;
-    --clr-grey-500: hsl(0, 0%, 10%)ff;
+    --clr-grey-100: hsl(0, 0%, 90%);
+    --clr-grey-200: hsl(0, 0%, 75%);
+    --clr-grey-300: hsl(0, 0%, 50%);
+    --clr-grey-400: hsl(0, 0%, 25%);
+    --clr-grey-500: hsl(0, 0%, 10%);
     --clr-black: black;
-    --clr-accent-green: hsl(120, 100%, 90%);
+    --clr-accent-green: hsl(120, 100%, 82%);
 
     --fs-100: 1rem;
     --fs-200: 1.25rem;
@@ -22,6 +22,7 @@
     --fw-normal: 400;
     --fw-bold: 700;
 
+    --br-5px: 5px;
     --br-10px: 10px;
     --br-15px: 15px;
     --br-25px: 25px;
@@ -43,6 +44,7 @@
     font-size: 16px;
 }
 
+/* CSS reset */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -50,6 +52,114 @@
     font-weight: var(--fw-normal);
 }
 
+body {
+    background-color: var(--clr-grey-100);
+}
+
+/* dashboard items styling */
+.dashboard {
+    width: 20rem;
+    height: 100vh;
+    padding: 2rem;
+
+    background-color: var(--clr-grey-500);
+    color: var(--clr-grey-100);
+    font-size: var(--fs-200);
+
+    /* scrolling enabled when items overflow the dashboard */
+    overflow: scroll;
+
+    /* scrollbar hidden for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* scrollbar hidden for Chrome, Safari and Opera */
+.dashboard::-webkit-scrollbar {
+    display: none;
+}
+
+.dashboard-heading {
+    font-size: var(--fs-100);
+}
+
+.dashboard__admin-details {
+    align-items: center;
+}
+
+.dashboard__admin-img {
+    --img-width: 10rem;
+    --fs-admin-img: 5rem;
+    
+    width: var(--img-width);
+    height: var(--img-width);
+    border-radius: var(--br-50-percent);
+    
+    background-color: var(--clr-grey-100);
+    color: var(--clr-grey-500);
+    font-size: var(--fs-admin-img);
+}
+
+.dashboard-divider {
+    border-color: var(--clr-grey-400);
+}
+
+.dashboard__options-btn {
+    width: 100%;
+    padding: 0.35em 1em;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 5px solid var(--clr-grey-500);
+    
+    background-color: transparent;
+    color: inherit;
+    font-size: var(--fs-200);
+    text-align: start;
+
+    transition: color 125ms;
+}
+
+.dashboard__options-btn:hover {
+    color: var(--clr-accent-green);
+    cursor: pointer;
+}
+
+.dashbord-option-active {
+    border-left: 5px solid var(--clr-accent-green);
+    color: var(--clr-accent-green);
+}
+
+/* dashboard items positioning */
+.dashboard,
+.dashboard--options {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.dashboard--admin,
+.dashboard__admin-details,
+.dashboard__options-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dashboard__options-details,
+.dashboard__options-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dashboard__admin-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* general styles */
 .strong {
     font-weight: var(--fw-bold);
 }
@@ -58,12 +168,26 @@
     font-style: italic;
 }
 
+/* JavaScript classes */
 .d-none {
     display: none;
 }
 
 .transparent {
     opacity: 0;
+}
+
+/* debugging classes */
+.outline-yellow {
+    outline: 1px solid yellow;
+}
+
+.outline-red {
+    outline: 1px solid red;
+}
+
+.outline-blue {
+    outline: 1px solid var(--clr-blue-accent-400);
 }
 
 /* Tablet */
