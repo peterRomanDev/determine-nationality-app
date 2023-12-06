@@ -57,8 +57,12 @@ body {
 }
 
 /* dashboard items styling */
+.dashboard-wrapper {
+    transition: transform 250ms ease-out;
+}
+
 .dashboard {
-    width: 20rem;
+    width: var(--dashboard-width);
     height: 100vh;
     padding: 2rem;
 
@@ -117,7 +121,7 @@ body {
     font-size: var(--fs-200);
     text-align: start;
 
-    transition: color 125ms;
+    transition: color 125ms ease-out;
 }
 
 .dashboard__options-btn:hover {
@@ -130,23 +134,36 @@ body {
     color: var(--clr-accent-green);
 }
 
-.dashboard-btn-toggle {
+.dashboard--btn-toggle {
     --fs-btn-toggle: 0.75rem;
     
     width: 1rem;
-    height: 3rem;
+    height: var(--dashboard--btn-toggle);
     border: 0;
 
     background-color: var(--clr-grey-500);
     color: var(--clr-grey-100);
     font-size: var(--fs-btn-toggle);
 
-    transition: background-color 125ms;
+    transition: background-color 125ms ease-out;
 }
 
-.dashboard-btn-toggle:hover {
+.dashboard__btn-toggle-icon {
+    pointer-events: none;
+}
+
+.dashboard--btn-toggle:hover {
     background-color: var(--clr-grey-400);
     cursor: pointer;
+}
+
+.dashboard-tooltip {
+    height: var(--dashboard--btn-toggle);
+    padding: 1em;
+
+    color: var(--clr-grey-500);
+
+    transition: opacity 125ms ease-out;
 }
 
 /* dashboard items positioning */
@@ -180,6 +197,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.dashboard-tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* dashboard functionality */
+.dashboard-hidden {
+    transform: translateX(calc(var(--dashboard-width) * -1));
 }
 
 /* general styles */
@@ -220,5 +248,8 @@ body {
 
 /* Desktop */
 @media (min-width: 1200px) {
-
+    :root {
+        --dashboard-width: 20rem;
+        --dashboard--btn-toggle: 3rem;
+    }
 }

@@ -4,7 +4,7 @@
 * dashboard
     - [x] create dashboard in HTML
     - [x] style dashboard in CSS
-    - [] show/hide dashboard by clicking the toggle button
+    - [x] show/hide dashboard by clicking the toggle button
 * list of users
     - [] create a list of users in HTML
     - [] style the list of users in CSS
