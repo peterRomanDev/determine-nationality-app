@@ -1,34 +1,34 @@
-const dashboardWrapper = document.querySelector('.dashboard-wrapper');
-const dashboard = document.querySelector('.dashboard');
-const dashboardTooltip = document.querySelector('.dashboard-tooltip');
+const sidebarWrapper = document.querySelector('.sidebar-wrapper');
+const sidebar = document.querySelector('.sidebar');
+const sidebarTooltip = document.querySelector('.sidebar-tooltip');
 
-dashboardWrapper.addEventListener('click', e => {
-    if(e.target.classList.contains('dashboard--btn-toggle')) {
-        if(dashboardWrapper.classList.contains('dashboard-hidden')) {
-            dashboardWrapper.classList.remove('dashboard-hidden');
-            dashboardTooltip.textContent = 'Hide Dashboard';
+sidebarWrapper.addEventListener('click', e => {
+    if(e.target.classList.contains('sidebar--btn-toggle')) {
+        if(sidebarWrapper.classList.contains('sidebar-hidden')) {
+            sidebarWrapper.classList.remove('sidebar-hidden');
+            sidebarTooltip.textContent = 'Hide sidebar';
         } else {
-            dashboardWrapper.classList.add('dashboard-hidden');
-            dashboardTooltip.textContent = 'Show Dashboard';
+            sidebarWrapper.classList.add('sidebar-hidden');
+            sidebarTooltip.textContent = 'Show sidebar';
         }
-    } else if(e.target.classList.contains('dashboard__options-btn')) {
-        const dashboardOptionsBtns = document.querySelectorAll('.dashboard__options-btn');
+    } else if(e.target.classList.contains('sidebar__options-btn')) {
+        const sidebarOptionsBtns = document.querySelectorAll('.sidebar__options-btn');
 
-        dashboardOptionsBtns.forEach(btn => btn.classList.remove('dashboard-option-active'));
-        e.target.classList.add('dashboard-option-active');
+        sidebarOptionsBtns.forEach(btn => btn.classList.remove('sidebar-option-active'));
+        e.target.classList.add('sidebar-option-active');
     }
 });
 
-dashboardWrapper.addEventListener('pointerover', e => {
-    if(e.target.classList.contains('dashboard--btn-toggle')) {
-        dashboardTooltip.classList.remove('d-none');
-        setTimeout(() => dashboardTooltip.classList.remove('transparent'), 125);
+sidebarWrapper.addEventListener('pointerover', e => {
+    if(e.target.classList.contains('sidebar--btn-toggle')) {
+        sidebarTooltip.classList.remove('d-none');
+        setTimeout(() => sidebarTooltip.classList.remove('transparent'), 125);
     }
 });
 
-dashboardWrapper.addEventListener('pointerout', e => {
-    if(e.target.classList.contains('dashboard--btn-toggle')) {
-        dashboardTooltip.classList.add('transparent');
-        setTimeout(() => dashboardTooltip.classList.add('d-none'), 125);
+sidebarWrapper.addEventListener('pointerout', e => {
+    if(e.target.classList.contains('sidebar--btn-toggle')) {
+        sidebarTooltip.classList.add('transparent');
+        setTimeout(() => sidebarTooltip.classList.add('d-none'), 125);
     }
 });

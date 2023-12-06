@@ -1,10 +1,10 @@
 # SmallClaims Assignment
 ## Tasks
 ### Styling and functionality
-* dashboard
-    - [x] create dashboard (HTML)
-    - [x] style dashboard (CSS)
-    - [x] show/hide dashboard by clicking the toggle button (JS)
+* sidebar
+    - [x] create sidebar (HTML)
+    - [x] style sidebar (CSS)
+    - [x] show/hide sidebar by clicking the toggle button (JS)
     - [x] highlight clicked button (JS)
 * list of users
     - [x] create a list of users (HTML)
