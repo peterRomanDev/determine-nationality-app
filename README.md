@@ -9,7 +9,7 @@
 * list of users
     - [x] create a list of users (HTML)
     - [x] style the list of users (CSS)
-    - [] highlight clicked user (JS)
+    - [x] highlight clicked user (JS)
     - [] create a user form (HTML)
     - [] style the user form (HTML)
 * user window
