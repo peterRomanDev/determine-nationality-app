@@ -13,8 +13,8 @@
     - [x] create a user form (HTML)
     - [x] style the user form (HTML)
 * user window
-    - [] create the user window in HTML
-    - [] style the user window in CSS
+    - [x] create the user window in HTML
+    - [x] style the user window in CSS
 - [] make the entire website responsive for mobile, tablet and desktop
 ### Displaying Users
 * add user form
