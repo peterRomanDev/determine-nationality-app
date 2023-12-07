@@ -1,9 +1,10 @@
+const app = document.querySelector('.app');
 const sidebarWrapper = document.querySelector('.sidebar-wrapper');
 const sidebar = document.querySelector('.sidebar');
 const sidebarTooltip = document.querySelector('.sidebar-tooltip');
 const dashboardWrapper = document.querySelector('.dashboard-wrapper');
 
-sidebarWrapper.addEventListener('click', e => {
+app.addEventListener('click', e => {
     if(e.target.classList.contains('sidebar--btn-toggle')) {
         if(sidebarWrapper.classList.contains('sidebar-hidden')) {
             sidebarWrapper.classList.remove('sidebar-hidden');
@@ -21,17 +22,22 @@ sidebarWrapper.addEventListener('click', e => {
 
         sidebarOptionsBtns.forEach(btn => btn.classList.remove('sidebar-option-active'));
         e.target.classList.add('sidebar-option-active');
+    } else if(e.target.classList.contains('user')) {
+        const users = document.querySelectorAll('.user');
+        
+        users.forEach(user => user.classList.remove('user-active'));
+        e.target.classList.add('user-active');
     }
 });
 
-sidebarWrapper.addEventListener('pointerover', e => {
+app.addEventListener('pointerover', e => {
     if(e.target.classList.contains('sidebar--btn-toggle')) {
         sidebarTooltip.classList.remove('d-none');
         setTimeout(() => sidebarTooltip.classList.remove('transparent'), 125);
     }
 });
 
-sidebarWrapper.addEventListener('pointerout', e => {
+app.addEventListener('pointerout', e => {
     if(e.target.classList.contains('sidebar--btn-toggle')) {
         sidebarTooltip.classList.add('transparent');
         setTimeout(() => sidebarTooltip.classList.add('d-none'), 125);

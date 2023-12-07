@@ -8,7 +8,7 @@
     - [x] highlight clicked button (JS)
 * list of users
     - [x] create a list of users (HTML)
-    - [] style the list of users (CSS)
+    - [x] style the list of users (CSS)
     - [] highlight clicked user (JS)
     - [] create a user form (HTML)
     - [] style the user form (HTML)
