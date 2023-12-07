@@ -17,10 +17,6 @@
     - [] style the user window in CSS
 - [] make the entire website responsive for mobile, tablet and desktop
 ### Displaying Users
-* fetch users
-    - [] fetch the users from the JSON placeholder API
-    - [] display the users from the JSON placeholder API in the list of users
-    - [] sort the list of users alphabetically
 * add user form
     - [] write a regular expression which only accepts letters, no spaces
     - [] add HTML attributes which limit the amount of characters which
@@ -31,7 +27,13 @@
         - [] no border if no value provided
     - [] the form can be submitted only if the input field contains a value
     - [] the form can be submitted by pressing the Enter key
-    - [] when the form is submitted, the value is deleted from the input field
+    * when the form is submitted
+        - [] the value is deleted from the input field
+        - [] the value is added to the list of users
+        - [] the values are sorted in alphabetical order
+* fetch users
+    - [] fetch the users from the JSON placeholder API
+    - [] display the users from the JSON placeholder API in the list of users
 * displaying users
     * when a user in the list of users is clicked:
         - [] a user window pops-up (if a user is clicked the first time)
