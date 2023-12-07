@@ -160,6 +160,8 @@ body {
     font-size: var(--fs-btn-toggle);
 
     transition: background-color 125ms ease-out;
+
+    z-index: 10;
 }
 
 .sidebar__btn-toggle-icon {
@@ -187,16 +189,8 @@ body {
 
 
 /* sidebar items positioning */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.sidebar--btn-toggle {
-    position: fixed;
-    top: 0;
-    left: var(--sidebar-width);
+.sidebar-wrapper {
+    display: flex;
 }
 
 .sidebar,
@@ -245,9 +239,42 @@ body {
 
 
 
+/* dashboard styling */
+.dashboard-wrapper {
+    width: calc(100% - var(--sidebar-width));
+    height: 100%;
+}
+
+
+
+
+
+/* dashboard positioning */
+.dashboard-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: var(--sidebar-width);
+}
+
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+
+
+
+
 /* list of users styling */
 .list-of-users {
     width: 25rem;
+    height: 35rem;
     padding: 2rem;
     box-shadow: 0 0 2rem -1rem var(--clr-grey-500);
     border-radius: var(--br-5px);
@@ -261,10 +288,14 @@ body {
 }
 
 .list-of-users__list {
+    background-color: var(--clr-grey-100);
+    
     border-radius: var(--br-5px);
     
     font-size: var(--fs-200);
     list-style: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .user {
@@ -277,7 +308,7 @@ body {
 }
 
 .user:hover {
-    background-color: var(--clr-grey-100);
+    background-color: var(--clr-accent-green);
     box-shadow: 0 0.3rem 1.5rem -1rem var(--clr-grey-500);
 
     cursor: pointer;
@@ -330,6 +361,13 @@ body {
 
 .sidebar-hidden {
     transform: translateX(calc(var(--sidebar-width) * -1));
+}
+
+.dashboard-full-screen {
+    width: 100%;
+    
+    transform: translateX(calc(var(--sidebar-width) * -1));
+    z-index: -10;
 }
 
 

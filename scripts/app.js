@@ -1,15 +1,20 @@
 const sidebarWrapper = document.querySelector('.sidebar-wrapper');
 const sidebar = document.querySelector('.sidebar');
 const sidebarTooltip = document.querySelector('.sidebar-tooltip');
+const dashboardWrapper = document.querySelector('.dashboard-wrapper');
 
 sidebarWrapper.addEventListener('click', e => {
     if(e.target.classList.contains('sidebar--btn-toggle')) {
         if(sidebarWrapper.classList.contains('sidebar-hidden')) {
             sidebarWrapper.classList.remove('sidebar-hidden');
             sidebarTooltip.textContent = 'Hide sidebar';
+
+            dashboardWrapper.classList.remove('dashboard-full-screen');
         } else {
             sidebarWrapper.classList.add('sidebar-hidden');
             sidebarTooltip.textContent = 'Show sidebar';
+
+            dashboardWrapper.classList.add('dashboard-full-screen');
         }
     } else if(e.target.classList.contains('sidebar__options-btn')) {
         const sidebarOptionsBtns = document.querySelectorAll('.sidebar__options-btn');
