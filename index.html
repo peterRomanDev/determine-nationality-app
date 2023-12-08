@@ -5,60 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmallClaims Assignment</title>
     <link rel="stylesheet" href="stylesheets/style.css">
-    <script src="https://kit.fontawesome.com/55c2ac1d65.js" crossorigin="anonymous" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/55c2ac1d65.js" crossorigin="anonymous" defer></script> -->
     <script src="scripts/app.js" defer></script>
 </head>
 <body>
     <div class="app">
         <div class="sidebar-wrapper">
             <div class="sidebar">
-                <div class="sidebar--admin">
-                    <h2 class="sidebar__admin-heading sidebar-heading">Admin</h2>
-                    <div class="sidebar__admin-details">
-                        <div class="sidebar__admin-img">
+                <div class="sidebar-admin">
+                    <h3 class="sidebar__h3">Admin</h3>
+                    <div class="sidebar-admin__details">
+                        <div class="sidebar-admin__img">
                             <span class="fa-solid fa-user"></span>
                         </div>
                         <span class="sidebar__admin-name">John Doe</span>
                     </div>
                 </div>
                 <hr class="sidebar-divider">
-                <div class="sidebar--options">
-                    <div class="sidebar__options-details">
-                        <h2 class="sidebar__options-heading sidebar-heading">General</h2>
-                        <div class="sidebar__options-btns">
-                            <button class="sidebar__options-btn">Home</button>
+                <div class="sidebar-options">
+                    <div class="sidebar-options__details">
+                        <h3 class="sidebar__h3">General</h3>
+                        <div class="sidebar-options__btns">
+                            <button class="sidebar-options__btn">Home</button>
                         </div>
                     </div>
-                    <div class="sidebar__options-details">
-                        <h2 class="sidebar__options-heading sidebar-heading">Users</h2>
-                        <div class="sidebar__options-btns">
-                            <button class="sidebar__options-btn">Manage Users</button>
+                    <div class="sidebar-options__details">
+                        <h3 class="sidebar__h3">Users</h3>
+                        <div class="sidebar-options__btns">
+                            <button class="sidebar-options__btn">Manage Users</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="sidebar--btn-toggle">
-                <span class="sidebar__btn-toggle-icon fa-solid fa-arrow-right"></span>
+            <button class="sidebar-btn-toggle">
+                <span class="sidebar-btn-toggle__icon fa-solid fa-arrow-right"></span>
             </button>
             <div class="sidebar-tooltip d-none transparent">Hide Sidebar</div>
         </div>
         <div class="dashboard-wrapper">
             <div class="dashboard">
                 <div class="list-of-users">
-                    <h2 class="list-of-users__heading">List of Users</h2>
+                    <h2 class="list-of-users__h2">List of Users</h2>
                     <ul class="list-of-users__list">
-                        <li class="user">Peter</li>
-                        <li class="user">Andrea</li>
-                        <li class="user">Ján</li>
-                        <li class="user">Choy</li>
-                        <li class="user">Peter</li>
-                        <li class="user">Andrea</li>
-                        <li class="user">Ján</li>
-                        <li class="user">Choy</li>
-                        <li class="user">Peter</li>
-                        <li class="user">Andrea</li>
-                        <li class="user">Ján</li>
-                        <li class="user">Choy</li>
+                        <li><button class="list-of-users__user">Peter</button></li>
+                        <li><button class="list-of-users__user">Andrea</button></li>
+                        <li><button class="list-of-users__user">Ján</button></li>
+                        <li><button class="list-of-users__user">Choy</button></li>
+                        <li><button class="list-of-users__user">Janko</button></li>
+                        <li><button class="list-of-users__user">Milan</button></li>
+                        <li><button class="list-of-users__user">Stephen</button></li>
+                        <li><button class="list-of-users__user">Josh</button></li>
+                        <li><button class="list-of-users__user">Robert</button></li>
                     </ul>
                     <form class="form-add-user">
                         <input class="form-add-user__input" type="text" name="user" id="user" placeholder="write a name here">
@@ -66,16 +63,16 @@
                     </form>
                 </div>
                 <div class="user-window">
-                    <h2 class="user-window__heading">User Information</h2>
+                    <h2 class="user-window__h2">User Information</h2>
                     <div class="user-window__details">
-                        <h3 class="user-window__subheading">Name</h3>
-                        <span class="name">Peter</span>
+                        <h3 class="user-window__h3">Name</h3>
+                        <span class="user-window__name">Peter</span>
                     </div>
                     <div class="user-window__details">
-                        <h3 class="user-window__subheading">Possible Nationalities</h3>
+                        <h3 class="user-window__h3">Possible Nationalities</h3>
                         <ul class="user-window__nationalities-list">
-                            <li class="nationality">Denmark 90%</li>
-                            <li class="nationality">Slovakia 10%</li>
+                            <li class="user-window__nationality">Denmark 90%</li>
+                            <li class="user-window__nationality">Slovakia 10%</li>
                         </ul>
                     </div>
                 </div>
