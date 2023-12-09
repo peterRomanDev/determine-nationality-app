@@ -15,7 +15,7 @@
 * user window
     - [x] create the user window in HTML
     - [x] style the user window in CSS
-- [] make the entire website responsive for mobile, tablet and desktop
+- [x] make the entire website responsive for mobile, tablet and desktop
 ### Displaying Users
 * add user form
     - [] write a regular expression which only accepts letters, no spaces

@@ -6,10 +6,11 @@
     <title>SmallClaims Assignment</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <!-- <script src="https://kit.fontawesome.com/55c2ac1d65.js" crossorigin="anonymous" defer></script> -->
-    <script src="scripts/app.js" defer></script>
+    <script type="module" src="scripts/app.js" defer></script>
 </head>
 <body>
     <div class="app">
+        <div class="bg-dark d-none transparent"></div>
         <div class="sidebar-wrapper">
             <div class="sidebar">
                 <div class="sidebar-admin">
@@ -38,7 +39,12 @@
                 </div>
             </div>
             <button class="sidebar-btn-toggle">
-                <span class="sidebar-btn-toggle__icon fa-solid fa-arrow-right"></span>
+                <div class="sidebar-btn-toggle__icon"><span class="fa-solid fa-arrow-right"></span></div>
+                <div class="sidebar-btn-toggle__lines">
+                    <div class="sidebar-btn-toggle__line-top sidebar-btn-toggle__line"></div>
+                    <div class="sidebar-btn-toggle__line-center sidebar-btn-toggle__line"></div>
+                    <div class="sidebar-btn-toggle__line-bottom sidebar-btn-toggle__line"></div>
+                </div>
             </button>
             <div class="sidebar-tooltip d-none transparent">Hide Sidebar</div>
         </div>
@@ -47,6 +53,15 @@
                 <div class="list-of-users">
                     <h2 class="list-of-users__h2">List of Users</h2>
                     <ul class="list-of-users__list">
+                        <li><button class="list-of-users__user">Peter</button></li>
+                        <li><button class="list-of-users__user">Andrea</button></li>
+                        <li><button class="list-of-users__user">Ján</button></li>
+                        <li><button class="list-of-users__user">Choy</button></li>
+                        <li><button class="list-of-users__user">Janko</button></li>
+                        <li><button class="list-of-users__user">Milan</button></li>
+                        <li><button class="list-of-users__user">Stephen</button></li>
+                        <li><button class="list-of-users__user">Josh</button></li>
+                        <li><button class="list-of-users__user">Robert</button></li>
                         <li><button class="list-of-users__user">Peter</button></li>
                         <li><button class="list-of-users__user">Andrea</button></li>
                         <li><button class="list-of-users__user">Ján</button></li>

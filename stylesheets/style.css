@@ -6,12 +6,15 @@
     --clr-grey-300: hsl(0, 0%, 50%);
     --clr-grey-400: hsl(0, 0%, 25%);
     --clr-grey-500: hsl(0, 0%, 10%);
+    --clr-grey-lower-opacity: rgba(26, 26, 26, 0.75);
     --clr-black: black;
     --clr-accent-green: hsl(120, 100%, 82%);
     --clr-accent-blue-100: hsl(200, 60%, 82%);
     --clr-accent-blue-200: hsl(200, 30%, 82%);
 
+    --fs-50: 0.75rem;
     --fs-100: 1rem;
+    --fs-150: 1.125rem;
     --fs-200: 1.25rem;
     --fs-300: 1.5rem;
     --fs-400: 1.75rem;
@@ -20,6 +23,7 @@
     --fs-700: 2.5rem;
     --fs-800: 2.75rem;
     --fs-900: 3rem;
+    --fs-1000: 4rem;
 
     --fw-normal: 400;
     --fw-bold: 700;
@@ -31,11 +35,6 @@
     --br-50px: 50px;
     --br-50-percent: 50%;
 
-    --pos-static: static;
-    --pos-relative: relative;
-    --pos-absolute: absolute;
-    --pos-sticky: sticky;
-
     --d-inline: inline;
     --d-block: block;
     --d-flex: flex;
@@ -46,31 +45,47 @@
 
 
     
-    --width-sidebar-btn-toggle: 1rem;
-    --width-dashboard-element: 18.5rem;
-    --width-sidebar: var(--width-dashboard-element);
+    --width-sidebar-btn-toggle: 3rem;
+    --width-dashboard-element: 18rem;
+    --width-sidebar: 15rem;
+    /* --width-sidebar: var(--width-dashboard-element); */
     --width-list-of-users: var(--width-dashboard-element);
     --width-user-window: var(--width-dashboard-element);
     --width-img: 10rem;
+    --width-dashboard-wrapper: 100%;
     
     --height-sidebar-btn-toggle: 3rem;
+    --max-height-dashboard-element: 30rem;
     
-    --padding-dashboard-element: 2rem;
+    --padding-dashboard-wrapper: 4rem 0;
+    --padding-dashboard-element: 1.5rem 1rem;
     --padding-btn: 0.35em 1em;
 
     --box-shadow-slight-shadow: 0 0 2rem -1rem var(--clr-grey-500);
 
-    --fs-h2: var(--fs-500);
+    --fs-h2: var(--fs-400);
     --fs-h3: var(--fs-100);
-    --fs-btn-toggle: 0.75rem;
-    --fs-admin-img: 4rem;
-    --fs-btn: var(--fs-200);
+    --fs-p: var(--fs-100);
+    --fs-form-add-user__input: var(--fs-100);
+    --fs-admin-img: var(--fs-1000);
+    --fs-btn-toggle: var(--fs-50);
+
     
     --gap-small: 0.5rem;
     --gap-mid: 1rem;
     --gap-big: 2rem;
     
     --flex-direction-dashboard: column;
+    --flex-direction-app: column;
+
+    --position-sidebar: fixed;
+    --position-sidebar-btn-toggle: fixed;
+    --position-sidebar-tooltip: fixed;
+
+    --d-sidebar-btn-toggle__lines: flex;
+    --d-sidebar-tooltip: none;
+    --d-sidebar-btn-toggle__icon: none;
+    --d-bg-dark: block;
 
     font-family: 'Helvetica', 'Arial', sans-serif;
     font-size: 16px;
@@ -122,14 +137,15 @@ body {
 
     background-color: transparent;
     border: 0;
-    border-radius: var(--br-5px);
     box-shadow: -5px 0 0 0 var(--clr-grey-500);
     
     color: var(--clr-grey-100);
-    font-size: var(--fs-btn);
+    font-size: var(--fs-p);
     text-align: start;
 
-    transition: color 125ms ease-out;
+    transition: 
+        color 125ms ease-out,
+        box-shadow 125ms ease-out;
 }
 
 .sidebar-options__btn:hover {
@@ -149,7 +165,7 @@ body {
     color: var(--clr-grey-100);
     font-size: var(--fs-btn-toggle);
 
-    transition: background-color 125ms ease-out;
+    transition: color 125ms ease-out;
 
     z-index: 10;
 }
@@ -159,9 +175,38 @@ body {
 }
 
 .sidebar-btn-toggle:hover {
-    background-color: var(--clr-grey-400);
+    color: var(--clr-accent-green);
 
     cursor: pointer;
+}
+
+.sidebar-btn-toggle:hover .sidebar-btn-toggle__line {
+    background-color: var(--clr-accent-green);
+}
+
+.sidebar-btn-toggle__lines {
+    pointer-events: none;
+}
+
+.sidebar-btn-toggle__line {
+    width: 2.25rem;
+    height: 3px;
+
+    background-color: var(--clr-grey-100);
+    border-radius: var(--br-50px);
+
+    transform-origin: left;
+
+    transition: background-color 125ms ease-out;
+}
+
+.sidebar-btn-toggle__line-top,
+.sidebar-btn-toggle__line-bottom {
+    transition: transform 250ms;
+}
+
+.sidebar-btn-toggle__line-center {
+    transition: opacity 250ms;
 }
 
 /* user button */
@@ -174,7 +219,7 @@ body {
     border-radius: var(--br-5px);
     
     color: var(--clr-grey-500);
-    font-size: var(--fs-btn);
+    font-size: var(--fs-p);
     text-align: start;
 
     transition: background-color 125ms ease-out;
@@ -188,7 +233,6 @@ body {
 
 /* add user button */
 .form-add-user__btn {
-    width: 10rem;
     padding: var(--padding-btn);
 
     background-color: var(--clr-accent-green);
@@ -196,7 +240,7 @@ body {
     border-radius: var(--br-5px);
     
     color: var(--clr-grey-500);
-    font-size: var(--fs-btn);
+    font-size: var(--fs-p);
 
     transition: background-color 125ms ease-out;
 }
@@ -212,20 +256,33 @@ body {
 
 
 /* other elements */
+.bg-dark {
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: var(--clr-grey-400);
+    background-color: var(--clr-grey-lower-opacity);
+
+    z-index: 10;
+
+    transition: opacity 250ms;
+}
+
 .dashboard-wrapper {
-    width: calc(100% - var(--width-sidebar));
-    height: 100%;
+    width: var(--width-dashboard-wrapper);
+    height: var(--height-dashboard-wrapper);
+    padding: var(--padding-dashboard-wrapper);
 }
 
 .sidebar {
     width: var(--width-sidebar);
-    height: 100vh;
+    height: var(--height-sidebar);
     padding: var(--padding-dashboard-element);
     
     background-color: var(--clr-grey-500);
     
     color: var(--clr-grey-100);
-    font-size: var(--fs-200);
+    font-size: var(--fs-p);
     
     /* scrolling enabled when items overflow the sidebar */
     overflow: scroll;
@@ -233,10 +290,8 @@ body {
     /* scrollbar hidden for IE, Edge and Firefox */
     -ms-overflow-style: none;
     scrollbar-width: none;
-}
 
-.sidebar-wrapper {
-    transition: transform 250ms ease-out;
+    z-index: 10;
 }
 
 /* scrollbar hidden for Chrome, Safari and Opera */
@@ -270,21 +325,23 @@ body {
 
     color: var(--clr-grey-500);
 
-    transition: opacity 125ms ease-out;
+    transition:
+        opacity 125ms ease-out,
+        transform 250ms ease-out;
 }
 
 .list-of-users,
 .user-window {
     width: var(--width-list-of-users);
-    max-height: 37rem;
+    max-height: var(--max-height-dashboard-element);
     padding: var(--padding-dashboard-element);
 
     background-color: var(--clr-grey-400);
-    border-radius: var(--br-5px);
+    border-radius: var(--br-10px);
     box-shadow: var(--box-shadow-slight-shadow);
     
     color: var(--clr-grey-100);
-    font-size: var(--fs-200);
+    font-size: var(--fs-p);
 }
 
 .list-of-users__list {
@@ -324,7 +381,7 @@ body {
     border: 0;
     border-radius: var(--br-5px);
     
-    font-size: var(--fs-200);
+    font-size: var(--fs-form-add-user__input);
 }
 
 .user-window__nationalities-list {
@@ -343,6 +400,7 @@ body {
 /* positioning */
 .app {
     display: flex;
+    flex-direction: var(--flex-direction-app);
 }
 
 .sidebar-wrapper {
@@ -381,8 +439,8 @@ body {
 }
 
 /* centered elements */
+.sidebar-btn-toggle__lines,
 .sidebar-admin__img,
-.sidebar-tooltip,
 .dashboard,
 .dashboard-wrapper,
 .form-add-user {
@@ -391,25 +449,62 @@ body {
     justify-content: center;
 }
 
+.bg-dark {
+    display: var(--d-bg-dark);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar {
+    position: var(--position-sidebar);
+    top: 0;
+    left: 0;
+
+    transition: transform 250ms ease-out;
+}
+
+.sidebar-btn-toggle {
+    position: var(--position-sidebar-btn-toggle);
+    top: 0;
+    left: var(--width-sidebar);
+
+    transition: transform 250ms ease-out;
+}
+
+.sidebar-btn-toggle__icon {
+    display: var(--d-sidebar-btn-toggle__icon);
+}
+
+.sidebar-tooltip {
+    display: var(--d-sidebar-tooltip);
+    
+    position: var(--position-sidebar-tooltip);
+    top: 0;
+    left: calc(var(--width-sidebar) + var(--width-sidebar-btn-toggle));
+}
+
+.sidebar-btn-toggle__lines {
+    display: var(--d-sidebar-btn-toggle__lines);
+    flex-direction: column;
+    gap: 5px;
+}
+
 .sidebar-options__btn {
     position: relative;
     left: 5px;
 }
 
-.sidebar-tooltip {
+.dashboard-wrapper {
     position: absolute;
-    left: calc(var(--width-sidebar) + var(--width-sidebar-btn-toggle));
+    top: 0;
+    left: var(--left-dashboard-wrapper);
 }
 
 .dashboard {
     flex-direction: var(--flex-direction-dashboard);
     gap: var(--gap-big);
-}
-
-.dashboard-wrapper {
-    position: absolute;
-    top: 0;
-    left: var(--width-sidebar);
 }
 
 
@@ -438,6 +533,18 @@ body {
     opacity: 0;
 }
 
+.line-top-active {
+    transform: translate(5px, -5px) rotate(45deg);
+}
+
+.line-center-active {
+    opacity: 0;
+}
+
+.line-bottom-active {
+    transform: translate(5px, 5px) rotate(-45deg);
+}
+
 .sidebar-option-active {
     box-shadow: -5px 0 0 0 var(--clr-accent-green);
     color: var(--clr-accent-green);
@@ -456,6 +563,10 @@ body {
 
 .user-active {
     background-color: var(--clr-accent-green);
+}
+
+.scrolling-disabled {
+    overflow: hidden;
 }
 
 
@@ -486,14 +597,40 @@ body {
 /* Tablet */
 @media (min-width: 768px) {
     :root {
+        --width-sidebar-btn-toggle: 3rem;
         --width-sidebar: 18.5rem;
         --width-dashboard-element: 25rem;
+        --width-dashboard-wrapper: calc(100% - var(--width-sidebar));
+
+        --height-sidebar-btn-toggle: 3rem;
+        --height-sidebar: 100vh;
+        --max-height-dashboard-element: 37rem;
+
+        --padding-dashboard-element: 2rem;
+
+        --fs-h2: var(--fs-500);
+        --fs-h3: var(--fs-100);
+        --fs-p: var(--fs-200);
+        --fs-form-add-user__input: var(--fs-200);
+        --fs-admin-img: var(--fs-1000);
+        --fs-btn-toggle: var(--fs-50);
+
+        --flex-direction-app: row;
+
+        --left-dashboard-wrapper: var(--width-sidebar);
+
+        --d-sidebar-btn-toggle__lines: none;
+        --d-sidebar-tooltip: flex;
+        --d-sidebar-btn-toggle__icon: block;
+        --d-bg-dark: none;
     }
 }
 
 /* Desktop */
 @media (min-width: 1200px) {
     :root {
+        --height-dashboard-wrapper: 100%;
+        
         --flex-direction-dashboard: row;
     }
 }

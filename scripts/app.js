@@ -1,52 +1,37 @@
+import { sidebar, showTooltipMsg, hideTooltipMsg, activateBtnToggle, deactivateBtnToggle, showDarkBg, hideDarkBg, openSidebar, closeSidebar, highlightClickedOption } from './sidebar.js';
+import { shrinkDashboard, extendDashboard, enableScrolling, disableScrolling } from './dashboard.js';
+import { highlightClickedUser } from './list-of-users.js';
+
 const app = document.querySelector('.app');
-const sidebarWrapper = document.querySelector('.sidebar-wrapper');
-const sidebar = document.querySelector('.sidebar');
-const sidebarTooltip = document.querySelector('.sidebar-tooltip');
-const dashboardWrapper = document.querySelector('.dashboard-wrapper');
 
 app.addEventListener('click', e => {
     // show/hide sidebar button clicked
     if(e.target.classList.contains('sidebar-btn-toggle')) {
         // if the sidebar is hidden...
-        if(sidebarWrapper.classList.contains('sidebar-hidden')) {
-            // show sidebar
-            sidebarWrapper.classList.remove('sidebar-hidden');
-
-            // update the text of the tooltip message
-            sidebarTooltip.textContent = 'Hide sidebar';
-
-            // shrink the dashboard
-            dashboardWrapper.classList.remove('dashboard-full-screen');
+        if(sidebar.classList.contains('sidebar-hidden')) {
+            // open sidebar
+            openSidebar();
         }
         // if the sidebar is visible...
         else {
-            // hide sidebar
-            sidebarWrapper.classList.add('sidebar-hidden');
-
-            // update the text of the tooltip message
-            sidebarTooltip.textContent = 'Show sidebar';
-
-            // extend the dashboard to full-screen
-            dashboardWrapper.classList.add('dashboard-full-screen');
+            // close sidebar
+            closeSidebar();
         }
+    }
+    // dark background clicked
+    else if(e.target.classList.contains('bg-dark')) {
+        // close sidebar
+        closeSidebar();
     }
     // sidebar option button clicked
     else if(e.target.classList.contains('sidebar-options__btn')) {
-        // make all the buttons not highlighted
-        const sidebarOptionsBtns = document.querySelectorAll('.sidebar-options__btn');
-        sidebarOptionsBtns.forEach(btn => btn.classList.remove('sidebar-option-active'));
-        
         // highlight the option button that is clicked
-        e.target.classList.add('sidebar-option-active');
+        highlightClickedOption(e);
     }
     // user clicked
     else if(e.target.classList.contains('list-of-users__user')) {
-        // make all the users not highlighted
-        const users = document.querySelectorAll('.list-of-users__user');
-        users.forEach(user => user.classList.remove('user-active'));
-        
         // highlight the user that is clicked
-        e.target.classList.add('user-active');
+        highlightClickedUser(e);
     }
 });
 
@@ -54,10 +39,7 @@ app.addEventListener('pointerover', e => {
     // the show/hide button is hovered over
     if(e.target.classList.contains('sidebar-btn-toggle')) {
         // display the tooltip message
-        sidebarTooltip.classList.remove('d-none');
-        
-        // show the tooltip message
-        setTimeout(() => sidebarTooltip.classList.remove('transparent'), 125);
+        showTooltipMsg();
     }
 });
 
@@ -65,9 +47,82 @@ app.addEventListener('pointerout', e => {
     // the cursor leaves the show/hide button
     if(e.target.classList.contains('sidebar-btn-toggle')) {
         // hide the tooltip message
-        sidebarTooltip.classList.add('transparent');
+        hideTooltipMsg();
+    }
+});
 
-        // undisplay the tooltip message
-        setTimeout(() => sidebarTooltip.classList.add('d-none'), 125);
+window.addEventListener('resize', () => {
+    // if the sidebar is hidden...
+    if(sidebar.classList.contains('sidebar-hidden')) {
+        // if the user is on a mobile...
+        if(window.innerWidth < 768) {
+            // shrink the dashboard
+            shrinkDashboard();
+        }
+        // if the user is on a tablet or a desktop...
+        else if(window.innerWidth >= 768) {
+            // extend the dashboard to full-screen
+            extendDashboard();
+        }
+    }
+    // if the sidebar is visible...
+    else {
+        // if the user is on a mobile...
+        if(window.innerWidth < 768) {
+            // turn the hamburger icon into an X
+            activateBtnToggle();
+            
+            // shrink the dashboard
+            disableScrolling();
+
+            // show dark background
+            showDarkBg();
+        }
+        // if the user is on a tablet or a desktop...
+        else if(window.innerWidth >= 768) {
+            // extend the dashboard to full-screen
+            enableScrolling();
+
+            // hide dark background
+            hideDarkBg();
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // if the sidebar is hidden...
+    if(sidebar.classList.contains('sidebar-hidden')) {
+        // if the user is on a mobile...
+        if(window.innerWidth < 768) {
+            // shrink the dashboard
+            shrinkDashboard();
+        }
+        // if the user is on a tablet or a desktop...
+        else if(window.innerWidth >= 768) {
+            // extend the dashboard to full-screen
+            extendDashboard();
+        }
+    }
+    // if the sidebar is visible...
+    else {
+        // if the user is on a mobile...
+        if(window.innerWidth < 768) {
+            // turn the hamburger icon into an X
+            activateBtnToggle();
+            
+            // shrink the dashboard
+            disableScrolling();
+
+            // show dark background
+            showDarkBg();
+        }
+        // if the user is on a tablet or a desktop...
+        else if(window.innerWidth >= 768) {
+            // extend the dashboard to full-screen
+            enableScrolling();
+
+            // hide dark background
+            hideDarkBg();
+        }
     }
 });
