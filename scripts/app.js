@@ -1,6 +1,6 @@
 import { sidebar, showTooltipMsg, hideTooltipMsg, activateBtnToggle, deactivateBtnToggle, showDarkBg, hideDarkBg, openSidebar, closeSidebar, highlightClickedOption } from './sidebar.js';
 import { shrinkDashboard, extendDashboard, enableScrolling, disableScrolling } from './dashboard.js';
-import { highlightClickedUser } from './list-of-users.js';
+import { highlightClickedUser, getUserInput, checkUserInput } from './list-of-users.js';
 
 const app = document.querySelector('.app');
 
@@ -48,6 +48,21 @@ app.addEventListener('pointerout', e => {
     if(e.target.classList.contains('sidebar-btn-toggle')) {
         // hide the tooltip message
         hideTooltipMsg();
+    }
+});
+
+app.addEventListener('submit', e => {
+    // the add user form is submitted by pressing the Add User button or the Enter key
+    if(e.target.classList.contains('form-add-user')) {
+        const correctUserInput = checkUserInput(getUserInput());
+
+        e.preventDefault();
+        
+        if(correctUserInput) {
+            console.log('good');
+        } else {
+            console.log('bad');
+        }
     }
 });
 

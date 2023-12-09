@@ -18,8 +18,7 @@
 - [x] make the entire website responsive for mobile, tablet and desktop
 ### Displaying Users
 * add user form
-    - [] write a regular expression which only accepts letters, no spaces
-    - [] add HTML attributes which limit the amount of characters which
+    - [x] write a regular expression which only accepts letters, no spaces
     * provide visual communication:
         - [] green border if the regular expression passes
         - [] red border if the regular expression doesn't pass
