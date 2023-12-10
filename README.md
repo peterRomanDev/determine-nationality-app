@@ -24,8 +24,8 @@
         - [x] red border if the regular expression doesn't pass
         - [x] a message if the regular expression doesn't pass
         - [x] no border if no value provided
-    - [] the form can be submitted only if the input field contains a value
-    - [] the form can be submitted by pressing the Enter key
+    - [x] the form can be submitted only if the input field contains a value
+    - [x] the form can be submitted by pressing the Enter key
     * when the form is submitted
         - [] the value is deleted from the input field
         - [] the value is added to the list of users
