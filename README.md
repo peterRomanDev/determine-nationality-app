@@ -20,10 +20,10 @@
 * add user form
     - [x] write a regular expression which only accepts letters, no spaces
     * provide visual communication:
-        - [] green border if the regular expression passes
-        - [] red border if the regular expression doesn't pass
-        - [] a message if the regular expression doesn't pass
-        - [] no border if no value provided
+        - [x] green border if the regular expression passes
+        - [x] red border if the regular expression doesn't pass
+        - [x] a message if the regular expression doesn't pass
+        - [x] no border if no value provided
     - [] the form can be submitted only if the input field contains a value
     - [] the form can be submitted by pressing the Enter key
     * when the form is submitted

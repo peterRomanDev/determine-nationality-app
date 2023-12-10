@@ -1,6 +1,6 @@
 import { sidebar, showTooltipMsg, hideTooltipMsg, activateBtnToggle, deactivateBtnToggle, showDarkBg, hideDarkBg, openSidebar, closeSidebar, highlightClickedOption } from './sidebar.js';
 import { shrinkDashboard, extendDashboard, enableScrolling, disableScrolling } from './dashboard.js';
-import { highlightClickedUser, getUserInput, checkUserInput } from './list-of-users.js';
+import { highlightClickedUser, getUserInput, checkUserInput, showFeedbackNone, showFeedbackSuccess, showFeedbackError } from './list-of-users.js';
 
 const app = document.querySelector('.app');
 
@@ -55,13 +55,39 @@ app.addEventListener('submit', e => {
     // the add user form is submitted by pressing the Add User button or the Enter key
     if(e.target.classList.contains('form-add-user')) {
         const correctUserInput = checkUserInput(getUserInput());
-
+        
         e.preventDefault();
         
+        // if the value that is typed is correct (contains only letters and has the right length)
         if(correctUserInput) {
-            console.log('good');
-        } else {
-            console.log('bad');
+            showFeedbackSuccess();
+        }
+        // if the value that is typed is incorrect (doesn't contain only letters and is too short or too long)
+        else {
+            showFeedbackError();
+        }
+    }
+});
+
+app.addEventListener('keyup', e => {
+    // a key is reseased when the add user input field is in focus
+    if(e.target.classList.contains('form-add-user__input')) {
+        const correctUserInput = checkUserInput(getUserInput());
+        
+        // if there is nothing written in the input field and the user pressed any kex except for 'Enter'...
+        if(getUserInput().length === 0 && e.key !== 'Enter') {
+            showFeedbackNone();
+        }
+        // if there is something written in the input field...
+        else {
+            // the typed value is correct (contains only letters and has the right length)
+            if(correctUserInput) {
+                showFeedbackSuccess();
+            }
+            // the typed value is incorrect (doesn't contain only letters and/or is too short or too long)
+            else {
+                showFeedbackError();
+            }
         }
     }
 });

@@ -9,6 +9,7 @@
     --clr-grey-lower-opacity: rgba(26, 26, 26, 0.75);
     --clr-black: black;
     --clr-accent-green: hsl(120, 100%, 82%);
+    --clr-accent-red: hsl(0, 100%, 74%);
     --clr-accent-blue-100: hsl(200, 60%, 82%);
     --clr-accent-blue-200: hsl(200, 30%, 82%);
 
@@ -67,6 +68,7 @@
     --fs-h3: var(--fs-100);
     --fs-p: var(--fs-100);
     --fs-form-add-user__input: var(--fs-100);
+    --fs-form-add-user__msg: var(--fs-100);
     --fs-admin-img: var(--fs-1000);
     --fs-btn-toggle: var(--fs-50);
 
@@ -382,6 +384,16 @@ body {
     border-radius: var(--br-5px);
     
     font-size: var(--fs-form-add-user__input);
+
+    transition: box-shadow 125ms;
+}
+
+.form-add-user__msg {
+    color: var(--clr-accent-red);
+    font-size: var(--fs-form-add-user__msg);
+    text-align: left;
+
+    transition: opacity 125ms;
 }
 
 .user-window__nationalities-list {
@@ -507,6 +519,15 @@ body {
     gap: var(--gap-big);
 }
 
+.list-of-users {
+    position: relative;
+}
+
+.form-add-user__msg {
+    position: absolute;
+    top: calc(100% + 1rem);
+}
+
 
 
 
@@ -563,6 +584,16 @@ body {
 
 .user-active {
     background-color: var(--clr-accent-green);
+}
+
+.border-success {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--clr-accent-green);
+}
+
+.border-error {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--clr-accent-red);
 }
 
 .scrolling-disabled {
