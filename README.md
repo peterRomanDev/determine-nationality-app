@@ -27,16 +27,16 @@
     - [x] the form can be submitted only if the input field contains a value
     - [x] the form can be submitted by pressing the Enter key
     * when the form is submitted
-        - [] the value is deleted from the input field
-        - [] the value is added to the list of users
-        - [] the values are sorted in alphabetical order
+        - [x] the value is deleted from the input field
+        - [x] the value is added to the list of users
+        - [x] the values are sorted in alphabetical order
+        - [x] the repeated values are not added to the list the second time
 * fetch users
     - [] fetch the users from the JSON placeholder API
     - [] display the users from the JSON placeholder API in the list of users
 * displaying users
     * when a user in the list of users is clicked:
         - [] a user window pops-up (if a user is clicked the first time)
-        - [] the clicked user is highlighted in the list of users
         * the user window contains:
             - [] the name of the user
             - [] a list of possible nationalities

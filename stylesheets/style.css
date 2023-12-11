@@ -335,7 +335,6 @@ body {
 .list-of-users,
 .user-window {
     width: var(--width-list-of-users);
-    max-height: var(--max-height-dashboard-element);
     padding: var(--padding-dashboard-element);
 
     background-color: var(--clr-grey-400);
@@ -344,6 +343,14 @@ body {
     
     color: var(--clr-grey-100);
     font-size: var(--fs-p);
+}
+
+.list-of-users {
+    max-height: var(--max-height-dashboard-element);
+}
+
+.user-window {
+    max-height: var(--max-height-dashboard-element);
 }
 
 .list-of-users__list {
@@ -423,6 +430,7 @@ body {
 .sidebar,
 .sidebar-options,
 .list-of-users,
+.list-of-users__header,
 .user-window {
     display: flex;
     flex-direction: column;

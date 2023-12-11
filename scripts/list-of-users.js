@@ -1,7 +1,9 @@
 const formAddUser = document.querySelector('.form-add-user');
+const listOfUsers = document.querySelector('.list-of-users__list');
 const formAddUserInput = document.querySelector('.form-add-user__input');
 const formAddUserMsg = document.querySelector('.form-add-user__msg');
 const pattern = /^[a-zA-Z]{1,20}$/;
+let names = [];
 
 export const highlightClickedUser = e => {
     const users = document.querySelectorAll('.list-of-users__user');
@@ -36,4 +38,26 @@ export const showFeedbackError = () => {
 
     formAddUserMsg.classList.remove('d-none');
     setTimeout(() => formAddUserMsg.classList.remove('transparent'), 0);
+};
+
+export const clearUserInput = () => formAddUser.user.value = '';
+
+export const displayListOfUsers = () => listOfUsers.classList.remove('d-none');
+
+const formatName = userInput => userInput[0].toUpperCase() + userInput.slice(1).toLowerCase();
+
+const pushName = name => names.push(name);
+
+const updateListOfUsers = () => {
+    const uniqueNames = [...new Set(names)].sort();
+    const nameBtns = uniqueNames
+        .map(name => `<li><button class="list-of-users__user">${name}</button></li>`)
+        .join('');
+
+    listOfUsers.innerHTML = nameBtns;
+};
+
+export const addUser = userInput => {
+    pushName(formatName(userInput));
+    updateListOfUsers();
 };

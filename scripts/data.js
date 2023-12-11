@@ -1,1 +1,1 @@
-export const getData = () => console.log('got data');
+export const getData = () => console.log('');
