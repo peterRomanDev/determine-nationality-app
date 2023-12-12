@@ -36,7 +36,7 @@
     - [x] remove titles from names
     - [x] remove last names from names
     - [x] display the users' first names from the JSON placeholder API in the list of users
-* displaying users
+* displaying user information
     * when a user in the list of users is clicked:
         - [] a user window pops-up (if a user is clicked the first time)``
         * the user window contains:
@@ -47,6 +47,16 @@
                 - [] contains country flags next to each nationality
                 - [] percentage of probability next to each nationality
         - [] when another user is clicked, the information in the user window updates
+* deleting users
+    - [] add an X button next to each user
+    - [] remove the user by clicking the X button
+    - [] remove the user from local storage
+* storing users
+    - [] the users from the placeholder API are stored in local storage
+    - [] newly added user is stored in local storage
+* pages
+    - [] add home page
+    - [] make the home page load by default
 
 ## Goals
 * separate logic in different JS files
