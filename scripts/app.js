@@ -66,7 +66,6 @@ app.addEventListener('submit', e => {
             clearUserInput();
             displayListOfUsers();
             addUser(userInput);
-            // getData();
         }
         // if the value that is typed is incorrect (doesn't contain only letters and is too short or too long)
         else {
@@ -135,6 +134,11 @@ window.addEventListener('resize', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    displayListOfUsers();
+    getData()
+        .then(data => data.forEach(user => addUser(user.name)))
+        .catch(err => console.log(err.message));
+
     // if the sidebar is hidden...
     if(sidebar.classList.contains('sidebar-hidden')) {
         // if the user is on a mobile...

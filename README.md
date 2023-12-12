@@ -32,11 +32,13 @@
         - [x] the values are sorted in alphabetical order
         - [x] the repeated values are not added to the list the second time
 * fetch users
-    - [] fetch the users from the JSON placeholder API
-    - [] display the users from the JSON placeholder API in the list of users
+    - [x] fetch the users from the JSON placeholder API
+    - [x] remove titles from names
+    - [x] remove last names from names
+    - [x] display the users' first names from the JSON placeholder API in the list of users
 * displaying users
     * when a user in the list of users is clicked:
-        - [] a user window pops-up (if a user is clicked the first time)
+        - [] a user window pops-up (if a user is clicked the first time)``
         * the user window contains:
             - [] the name of the user
             - [] a list of possible nationalities

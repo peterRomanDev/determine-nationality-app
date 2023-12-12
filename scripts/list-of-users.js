@@ -2,7 +2,6 @@ const formAddUser = document.querySelector('.form-add-user');
 const listOfUsers = document.querySelector('.list-of-users__list');
 const formAddUserInput = document.querySelector('.form-add-user__input');
 const formAddUserMsg = document.querySelector('.form-add-user__msg');
-const pattern = /^[a-zA-Z]{1,20}$/;
 let names = [];
 
 export const highlightClickedUser = e => {
@@ -14,7 +13,11 @@ export const highlightClickedUser = e => {
 
 export const getUserInput = () => formAddUser.user.value;
 
-export const checkUserInput = userInput => pattern.test(userInput);
+export const checkUserInput = userInput => {
+    const pattern = /^[a-zA-Z]{1,20}$/;
+
+    return pattern.test(userInput);
+};
 
 export const showFeedbackNone = () => {
     formAddUserInput.classList.remove('border-success');
@@ -44,7 +47,16 @@ export const clearUserInput = () => formAddUser.user.value = '';
 
 export const displayListOfUsers = () => listOfUsers.classList.remove('d-none');
 
-const formatName = userInput => userInput[0].toUpperCase() + userInput.slice(1).toLowerCase();
+const removeTitle = name => {
+    const pattern = /^(Mr\.?|Mrs\.?|Ms\.?)\s/i;
+    const firstWord = name.slice(0, name.indexOf(' ') + 1);
+
+    return pattern.test(firstWord) ? name.slice(name.indexOf(' ') + 1) : name;
+};
+
+const getFirstName = name => name.includes(' ') ? name.slice(0, name.indexOf(' ')) : name;
+
+const formatName = name => `${name[0].toUpperCase()}${name.slice(1).toLowerCase()}`;
 
 const pushName = name => names.push(name);
 
@@ -57,7 +69,11 @@ const updateListOfUsers = () => {
     listOfUsers.innerHTML = nameBtns;
 };
 
-export const addUser = userInput => {
-    pushName(formatName(userInput));
+export const addUser = name => {
+    const nameWithoutTitle = removeTitle(name);
+    const firstName = getFirstName(nameWithoutTitle);
+    const formattedName = formatName(firstName);
+    
+    pushName(formattedName);
     updateListOfUsers();
 };
