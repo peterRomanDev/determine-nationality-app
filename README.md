@@ -28,7 +28,7 @@ You can view the info by clicking on a user, or by submitting the form. The name
 * validation: input field only accepts letters, no spaces
 * the list should not look broken on various screen sizes
 * view a list of user first names (JSON Placeholder API)
-* dd a new name to the list using an input field
+* add a new name to the list using an input field
 * see nationality with probability percentage (sorted by highest to lowest) next to each name (see nationality api in acceptance criteria)
 * see full country name next to the name instead of country code ( i.e. Denmark instead of DK)
 * able to view the list with added names after page reload
