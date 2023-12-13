@@ -50,11 +50,11 @@ app.addEventListener('click', e => {
     }
     // user clicked
     else if(e.target.classList.contains('list-of-users__user')) {
-        // // fetch the info about the nationalities of the user
-        // getNationalities(e.target.textContent.toLowerCase())
-        // // show the user information in the user window
-        //     .then(data => showUserInfo(data))
-        //     .catch(err => console.log(err.message));
+        // fetch the info about the nationalities of the user
+        getNationalities(e.target.textContent.toLowerCase())
+        // show the user information in the user window
+            .then(data => showUserInfo(data))
+            .catch(err => console.log(err.message));
         
         // highlight the user button that is clicked
         highlightUserBtn(e.target.textContent);
@@ -94,11 +94,11 @@ app.addEventListener('submit', e => {
         
         // if the value that is typed is correct (contains only letters and has the right length)
         if(correctUserInput) {
-            // // fetch the info about the nationalities of the user
-            // getNationalities(userInput)
-            // // show the user information in the user window
-            //     .then(data => showUserInfo(data))
-            //     .catch(err => console.log(err.message));
+            // fetch the info about the nationalities of the user
+            getNationalities(userInput)
+            // show the user information in the user window
+                .then(data => showUserInfo(data))
+                .catch(err => console.log(err.message));
             
             // display the list of users
             displayListOfUsers();

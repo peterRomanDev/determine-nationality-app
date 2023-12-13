@@ -1,6 +1,42 @@
 # SmallClaims Assignment
+
+## Table Of Contents
+
+* [Description](#description)
+* [How To Use The Application](#how-to-use-the-application)
+* [Goals](#goals)
+* [Tasks](#tasks)
+* [Feedback](#feedback)
+* [Author](#author)
+
+## Description
+
+This web application allows you to determine probable nationalities of users.
+
+## How To Use The Application
+
+In order to use the application, simply open the index.html file. You will land on the home page of the portal.
+
+Click "Manage Users" on the sidebar to view the list of users and the user information window. There are already some users in the list but you can add more by typing the name in the input field (only letters are allowed). When submitted, the name is added to the list and the information about probable nationalities is displayed. These nationalities are sorted from the most to the least probable.
+
+You can view the info by clicking on a user, or by submitting the form. The names in the list of users are sorted alphabetically and remain there even after page reload, unless explicitly deleted by pressing the corresponsing X button (with the exception of the intial users, these will always be loaded in).
+
+## Goals
+
+* user list is rendered alphabetically
+* name input field submits on "Enter" key
+* validation: input field only accepts letters, no spaces
+* the list should not look broken on various screen sizes
+* view a list of user first names (JSON Placeholder API)
+* dd a new name to the list using an input field
+* see nationality with probability percentage (sorted by highest to lowest) next to each name (see nationality api in acceptance criteria)
+* see full country name next to the name instead of country code ( i.e. Denmark instead of DK)
+* able to view the list with added names after page reload
+
 ## Tasks
+
 ### Styling and functionality
+
 * sidebar
     - [x] create sidebar (HTML)
     - [x] style sidebar (CSS)
@@ -16,7 +52,9 @@
     - [x] create the user window in HTML
     - [x] style the user window in CSS
 - [x] make the entire website responsive for mobile, tablet and desktop
+
 ### Displaying Users
+
 * add user form
     - [x] write a regular expression which only accepts letters, no spaces
     * provide visual communication:
@@ -56,8 +94,16 @@
     - [x] add home page
     - [x] make the home page load by default
 
-## Goals
-* separate logic in different JS files
-* turn the JavaScript code into TypeScript code
-* bundle the separate JS files using Vite
-* lint the code using ESLint
+## Feedback
+
+In case you would like to provide feedback on this app, feel free to contact me at peter.roman24[at]gmail.com.
+
+Any feedback is appreciated as I am always trying to improve my skills and work.
+
+## Author
+
+This portfolio is created and maintained by me, Peter Roman.
+
+Connect with me:
+* [GitHub](https://github.com/peterRomanDev)
+* [LinkedIn](https://www.linkedin.com/in/proman2/)
