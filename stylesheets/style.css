@@ -63,8 +63,10 @@
 
     --box-shadow-slight-shadow: 0 0 2rem -1rem var(--clr-grey-500);
 
+    --fs-h1: var(--fs-500);
     --fs-h2: var(--fs-400);
     --fs-h3: var(--fs-100);
+    --fs-h3-home: var(--fs-200);
     --fs-p: var(--fs-100);
     --fs-form-add-user__input: var(--fs-100);
     --fs-form-add-user__msg: var(--fs-100);
@@ -113,6 +115,21 @@ body {
 /* styling */
 
 /* headings */
+.home__h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+}
+
+.home__h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+}
+
+.home__h3 {
+    font-size: var(--fs-h3-home);
+    font-weight: var(--fw-bold);
+}
+
 .list-of-users__h2,
 .user-window__h2 {
     font-size: var(--fs-h2);
@@ -242,6 +259,10 @@ body {
     transition: background-color 125ms;
 }
 
+.list-of-users__user-delete-icon {
+    pointer-events: none;
+}
+
 .list-of-users__user-delete:hover {
     background-color: var(--clr-accent-green);
 
@@ -273,6 +294,26 @@ body {
 
 
 /* other elements */
+.home {
+    padding: var(--padding-dashboard-element);
+    
+    transition: opacity 125ms;
+}
+
+.home__p {
+    font-size: var(--fs-p);
+}
+
+.home__list-pages {
+    list-style: none;
+}
+
+.home__list-functionalities {
+    padding: var(--padding-btn);
+    
+    list-style: disc;
+}
+
 .bg-dark {
     width: 100vw;
     height: 100vh;
@@ -362,10 +403,14 @@ body {
 
 .list-of-users {
     max-height: var(--max-height-dashboard-element);
+
+    transition: opacity 125ms;
 }
 
 .user-window {
     max-height: var(--max-height-dashboard-element);
+
+    transition: opacity 125ms;
 }
 
 .list-of-users__list {
@@ -442,6 +487,9 @@ body {
 }
 
 /* big gap between elements */
+.home,
+.home__section,
+.home__list-pages,
 .sidebar,
 .sidebar-options,
 .list-of-users,
@@ -454,6 +502,7 @@ body {
 }
 
 /* mid gap between elements */
+.home__page,
 .sidebar-admin,
 .sidebar-admin__details,
 .sidebar-options__details,
@@ -465,6 +514,7 @@ body {
 }
 
 /* small gap between elements */
+.home__list-functionalities,
 .sidebar-options__details,
 .sidebar-options__btns,
 .list-of-users__list,
@@ -667,6 +717,7 @@ body {
 
         --padding-dashboard-element: 2rem;
 
+        --fs-h1: var(--fs-700);
         --fs-h2: var(--fs-500);
         --fs-h3: var(--fs-100);
         --fs-p: var(--fs-200);

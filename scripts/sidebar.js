@@ -7,6 +7,8 @@ const lineTop = document.querySelector('.sidebar-btn-toggle__line-top');
 const lineCenter = document.querySelector('.sidebar-btn-toggle__line-center');
 const lineBottom = document.querySelector('.sidebar-btn-toggle__line-bottom');
 const bgDark = document.querySelector('.bg-dark');
+export const btnPageHome = document.querySelector('.btn-page-home');
+export const btnPageManageUsers = document.querySelector('.btn-page-manage-users');
 
 const showSidebar = () => {
     sidebar.classList.remove('sidebar-hidden');
@@ -104,9 +106,9 @@ export const closeSidebar = () => {
     }
 };
 
-export const highlightClickedOption = e => {
+export const highlightPageBtn = pageBtn => {
     const sidebarOptionsBtns = document.querySelectorAll('.sidebar-options__btn');
     
     sidebarOptionsBtns.forEach(btn => btn.classList.remove('sidebar-option-active'));
-    e.target.classList.add('sidebar-option-active');
+    pageBtn.classList.add('sidebar-option-active');
 };

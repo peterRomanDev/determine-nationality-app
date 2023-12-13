@@ -11,7 +11,7 @@
 <body>
     <div class="app">
         <div class="bg-dark d-none transparent"></div>
-        <div class="sidebar-wrapper">
+        <header class="sidebar-wrapper">
             <div class="sidebar">
                 <div class="sidebar-admin">
                     <h3 class="sidebar__h3">Admin</h3>
@@ -27,13 +27,13 @@
                     <div class="sidebar-options__details">
                         <h3 class="sidebar__h3">General</h3>
                         <div class="sidebar-options__btns">
-                            <button class="sidebar-options__btn">Home</button>
+                            <button class="btn-page-home sidebar-options__btn">Home</button>
                         </div>
                     </div>
                     <div class="sidebar-options__details">
                         <h3 class="sidebar__h3">Users</h3>
                         <div class="sidebar-options__btns">
-                            <button class="sidebar-options__btn">Manage Users</button>
+                            <button class="btn-page-manage-users sidebar-options__btn">Manage Users</button>
                         </div>
                     </div>
                 </div>
@@ -47,9 +47,34 @@
                 </div>
             </button>
             <div class="sidebar-tooltip d-none transparent">Hide Sidebar</div>
-        </div>
-        <div class="dashboard-wrapper">
+        </header>
+        <main class="dashboard-wrapper">
             <div class="dashboard">
+                <div class="home">
+                    <div class="home__section">
+                        <h1 class="home__h1">Welcome To The Admin Dashboard</h1>
+                        <p class="home__p">This dashboard allows you to administer the website.</p>
+                    </div>
+                    <div class="home__section">
+                        <h2 class="home__h2">Pages</h2>
+                        <ul class="home__list-pages">
+                            <li class="home__page">
+                                <h3 class="home__h3">Home</h2>
+                                <ul class="home__list-functionalities">
+                                    <li class="home__p">Home page</li>
+                                </ul>
+                            </li>
+                            <li class="home__page">
+                                <h3 class="home__h3">Manage Users</h2>
+                                <ul class="home__list-functionalities">
+                                    <li class="home__p">Add users</li>
+                                    <li class="home__p">Remove users</li>
+                                    <li class="home__p">Check the probable nationalities of users</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="list-of-users">
                     <h2 class="list-of-users__h2">List of Users</h2>
                     <ul class="list-of-users__list d-none"></ul>
@@ -61,24 +86,10 @@
                 </div>
                 <div class="user-window">
                     <h2 class="user-window__h2">User Information</h2>
-                    <div class="user-window__info">
-                        <!-- <div class="user-window__details">
-                            <h3 class="user-window__h3">Name</h3>
-                            <span class="user-window__name">Peter</span>
-                        </div>
-                        <div class="user-window__details">
-                            <h3 class="user-window__h3">Possible Nationalities</h3>
-                            <ul class="user-window__nationalities-list">
-                                <li class="user-window__nationality">Denmark 90%</li>
-                                <li class="user-window__nationality">Slovakia 10%</li>
-                                <li class="user-window__nationality">Denmark 90%</li>
-                                <li class="user-window__nationality">Slovakia 10%</li>
-                            </ul>
-                        </div> -->
-                    </div>
+                    <div class="user-window__info"></div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 
 </body>

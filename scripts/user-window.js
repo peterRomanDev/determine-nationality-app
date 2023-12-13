@@ -1,5 +1,6 @@
 import { getCountryName } from './data.js';
 
+export const userWindow = document.querySelector('.user-window');
 const userWindowInfo = document.querySelector('.user-window__info');
 
 export const showUserInfo = async (data) => {

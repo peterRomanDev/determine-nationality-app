@@ -1,4 +1,6 @@
-import { sidebar, showTooltipMsg, hideTooltipMsg, activateBtnToggle, deactivateBtnToggle, showDarkBg, hideDarkBg, openSidebar, closeSidebar, highlightClickedOption } from './sidebar.js';
+import { pageHome } from './pageHome.js';
+import { pageManageUsers } from './pageManageUsers.js';
+import { sidebar, showTooltipMsg, hideTooltipMsg, activateBtnToggle, showDarkBg, hideDarkBg, openSidebar, closeSidebar } from './sidebar.js';
 import { shrinkDashboard, extendDashboard, enableScrolling, disableScrolling } from './dashboard.js';
 import { highlightUserBtn, getUserInput, checkUserInput, showFeedbackNone, showFeedbackSuccess, showFeedbackError, clearUserInput, displayListOfUsers, addUser, deleteUser } from './list-of-users.js';
 import { showUserInfo } from './user-window.js';
@@ -26,10 +28,25 @@ app.addEventListener('click', e => {
         // close sidebar
         closeSidebar();
     }
-    // sidebar option button clicked
-    else if(e.target.classList.contains('sidebar-options__btn')) {
-        // highlight the option button that is clicked
-        highlightClickedOption(e);
+    else if(e.target.classList.contains('btn-page-home')) {
+        // load the page Home
+        pageHome();
+
+        // if the user is on a mobile...
+        if(window.innerWidth < 768) {
+            // close sidebar
+            closeSidebar();
+        }
+    }
+    else if(e.target.classList.contains('btn-page-manage-users')) {
+        // load the page Manage Users
+        pageManageUsers();
+        
+        // if the user is on a mobile...
+        if(window.innerWidth < 768) {
+            // close sidebar
+            closeSidebar();
+        }
     }
     // user clicked
     else if(e.target.classList.contains('list-of-users__user')) {
@@ -168,6 +185,9 @@ window.addEventListener('resize', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    // load the page Home
+    pageHome();
+    
     // display the list of users
     displayListOfUsers();
 

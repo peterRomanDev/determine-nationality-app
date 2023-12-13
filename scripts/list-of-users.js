@@ -1,5 +1,6 @@
+export const listOfUsers = document.querySelector('.list-of-users');
+const listOfUsersList = document.querySelector('.list-of-users__list');
 const formAddUser = document.querySelector('.form-add-user');
-const listOfUsers = document.querySelector('.list-of-users__list');
 const formAddUserInput = document.querySelector('.form-add-user__input');
 const formAddUserMsg = document.querySelector('.form-add-user__msg');
 let names = [];
@@ -51,7 +52,7 @@ export const showFeedbackError = () => {
 
 export const clearUserInput = () => formAddUser.user.value = '';
 
-export const displayListOfUsers = () => listOfUsers.classList.remove('d-none');
+export const displayListOfUsers = () => listOfUsersList.classList.remove('d-none');
 
 const removeTitle = name => {
     const pattern = /^(Mr\.?|Mrs\.?|Ms\.?)\s/i;
@@ -77,12 +78,12 @@ const updateListOfUsers = () => {
         .map(name => `
             <li class="list-of-users__btn">
                 <button class="list-of-users__user">${name}</button>
-                <button class="list-of-users__user-delete"><span class="fa-solid fa-x"></span></button>
+                <button class="list-of-users__user-delete"><span class="list-of-users__user-delete-icon fa-solid fa-x"></span></button>
             </li>
         `)
         .join('');
 
-    listOfUsers.innerHTML = nameBtns;
+    listOfUsersList.innerHTML = nameBtns;
 };
 
 export const addUser = name => {

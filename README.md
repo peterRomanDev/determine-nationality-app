@@ -53,8 +53,8 @@
     - [x] remove the user by clicking the X button
     - [x] remove the user from local storage
 * pages
-    - [] add home page
-    - [] make the home page load by default
+    - [x] add home page
+    - [x] make the home page load by default
 
 ## Goals
 * separate logic in different JS files
