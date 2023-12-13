@@ -3,6 +3,7 @@ import { shrinkDashboard, extendDashboard, enableScrolling, disableScrolling } f
 import { highlightUserBtn, getUserInput, checkUserInput, showFeedbackNone, showFeedbackSuccess, showFeedbackError, clearUserInput, displayListOfUsers, addUser } from './list-of-users.js';
 import { showUserInfo } from './user-window.js';
 import { getUsers, getNationalities } from './data.js';
+import { storeUser, addStoredUsers } from './user-storage.js';
 
 const app = document.querySelector('.app');
 
@@ -80,6 +81,9 @@ app.addEventListener('submit', e => {
 
             // add the typed user name to the list of users
             addUser(userInput);
+
+            // store the user in local storage
+            storeUser(userInput);
 
             // highlight the user button that has the same text content os the user input
             highlightUserBtn(userInput);
@@ -165,6 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // add each fetched user to the list of users
         .then(data => data.forEach(user => addUser(user.name)))
         .catch(err => console.log(err.message));
+
+    // when the page loads, add the users stored in local storage to the list of users
+    addStoredUsers();
 
     // if the sidebar is hidden...
     if(sidebar.classList.contains('sidebar-hidden')) {

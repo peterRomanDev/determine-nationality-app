@@ -62,7 +62,7 @@ const removeTitle = name => {
 
 const getFirstName = name => name.includes(' ') ? name.slice(0, name.indexOf(' ')) : name;
 
-const formatName = name => {
+export const formatName = name => {
     const nameWithoutTitle = removeTitle(name);
     const firstName = getFirstName(nameWithoutTitle);
 

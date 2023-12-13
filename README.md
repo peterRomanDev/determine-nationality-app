@@ -47,8 +47,7 @@
                 - [x] country names show up next to the nationality
         - [x] when another user is clicked, the information in the user window updates
 * storing users
-    - [] the users from the placeholder API are stored in local storage
-    - [] newly added user is stored in local storage
+    - [x] newly added user is stored in local storage
 * deleting users
     - [] add an X button next to each user
     - [] remove the user by clicking the X button
