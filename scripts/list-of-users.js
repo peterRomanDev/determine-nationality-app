@@ -4,11 +4,17 @@ const formAddUserInput = document.querySelector('.form-add-user__input');
 const formAddUserMsg = document.querySelector('.form-add-user__msg');
 let names = [];
 
-export const highlightClickedUser = e => {
-    const users = document.querySelectorAll('.list-of-users__user');
-    users.forEach(user => user.classList.remove('user-active'));
-    
-    e.target.classList.add('user-active');
+export const highlightUserBtn = name => {
+    const formattedName = formatName(name);
+    const userBtns = document.querySelectorAll('.list-of-users__user');
+
+    userBtns.forEach(userBtn => {
+        userBtn.classList.remove('user-active');
+        
+        if(userBtn.textContent === formattedName) {
+            userBtn.classList.add('user-active');
+        }
+    })
 };
 
 export const getUserInput = () => formAddUser.user.value;
@@ -56,7 +62,12 @@ const removeTitle = name => {
 
 const getFirstName = name => name.includes(' ') ? name.slice(0, name.indexOf(' ')) : name;
 
-const formatName = name => `${name[0].toUpperCase()}${name.slice(1).toLowerCase()}`;
+const formatName = name => {
+    const nameWithoutTitle = removeTitle(name);
+    const firstName = getFirstName(nameWithoutTitle);
+
+    return `${firstName[0].toUpperCase()}${firstName.slice(1).toLowerCase()}`;
+};
 
 const pushName = name => names.push(name);
 
@@ -70,9 +81,7 @@ const updateListOfUsers = () => {
 };
 
 export const addUser = name => {
-    const nameWithoutTitle = removeTitle(name);
-    const firstName = getFirstName(nameWithoutTitle);
-    const formattedName = formatName(firstName);
+    const formattedName = formatName(name);
     
     pushName(formattedName);
     updateListOfUsers();

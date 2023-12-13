@@ -1,7 +1,8 @@
 import { sidebar, showTooltipMsg, hideTooltipMsg, activateBtnToggle, deactivateBtnToggle, showDarkBg, hideDarkBg, openSidebar, closeSidebar, highlightClickedOption } from './sidebar.js';
 import { shrinkDashboard, extendDashboard, enableScrolling, disableScrolling } from './dashboard.js';
-import { highlightClickedUser, getUserInput, checkUserInput, showFeedbackNone, showFeedbackSuccess, showFeedbackError, clearUserInput, displayListOfUsers, addUser } from './list-of-users.js';
-import { getData } from './data.js';
+import { highlightUserBtn, getUserInput, checkUserInput, showFeedbackNone, showFeedbackSuccess, showFeedbackError, clearUserInput, displayListOfUsers, addUser } from './list-of-users.js';
+import { showUserInfo } from './user-window.js';
+import { getUsers, getNationalities } from './data.js';
 
 const app = document.querySelector('.app');
 
@@ -31,8 +32,14 @@ app.addEventListener('click', e => {
     }
     // user clicked
     else if(e.target.classList.contains('list-of-users__user')) {
-        // highlight the user that is clicked
-        highlightClickedUser(e);
+        // // fetch the info about the nationalities of the user
+        // getNationalities(e.target.textContent.toLowerCase())
+        // // show the user information in the user window
+        //     .then(data => showUserInfo(data))
+        //     .catch(err => console.log(err.message));
+        
+        // highlight the user button that is clicked
+        highlightUserBtn(e.target.textContent);
     }
 });
 
@@ -62,10 +69,26 @@ app.addEventListener('submit', e => {
         
         // if the value that is typed is correct (contains only letters and has the right length)
         if(correctUserInput) {
-            showFeedbackNone();
-            clearUserInput();
+            // // fetch the info about the nationalities of the user
+            // getNationalities(userInput)
+            // // show the user information in the user window
+            //     .then(data => showUserInfo(data))
+            //     .catch(err => console.log(err.message));
+            
+            // display the list of users
             displayListOfUsers();
+
+            // add the typed user name to the list of users
             addUser(userInput);
+
+            // highlight the user button that has the same text content os the user input
+            highlightUserBtn(userInput);
+
+            // remove feedback
+            showFeedbackNone();
+
+            // remove the typed user name from the input field
+            clearUserInput();
         }
         // if the value that is typed is incorrect (doesn't contain only letters and is too short or too long)
         else {
@@ -134,8 +157,12 @@ window.addEventListener('resize', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    // display the list of users
     displayListOfUsers();
-    getData()
+
+    // fetch the info about the initial users from the API
+    getUsers()
+        // add each fetched user to the list of users
         .then(data => data.forEach(user => addUser(user.name)))
         .catch(err => console.log(err.message));
 

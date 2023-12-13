@@ -431,6 +431,7 @@ body {
 .sidebar-options,
 .list-of-users,
 .list-of-users__header,
+.user-window__info,
 .user-window {
     display: flex;
     flex-direction: column;

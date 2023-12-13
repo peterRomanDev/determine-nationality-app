@@ -38,28 +38,27 @@
     - [x] display the users' first names from the JSON placeholder API in the list of users
 * displaying user information
     * when a user in the list of users is clicked:
-        - [] a user window pops-up (if a user is clicked the first time)``
         * the user window contains:
-            - [] the name of the user
-            - [] a list of possible nationalities
+            - [x] the name of the user
+            - [x] a list of possible nationalities
             * the list of possible nationalities:
-                - [] is sorted from highest probability to lowest
-                - [] contains country flags next to each nationality
-                - [] percentage of probability next to each nationality
-        - [] when another user is clicked, the information in the user window updates
+                - [x] is sorted from highest probability to lowest
+                - [x] percentage of probability next to each nationality
+                - [x] country names show up next to the nationality
+        - [x] when another user is clicked, the information in the user window updates
+* storing users
+    - [] the users from the placeholder API are stored in local storage
+    - [] newly added user is stored in local storage
 * deleting users
     - [] add an X button next to each user
     - [] remove the user by clicking the X button
     - [] remove the user from local storage
-* storing users
-    - [] the users from the placeholder API are stored in local storage
-    - [] newly added user is stored in local storage
 * pages
     - [] add home page
     - [] make the home page load by default
 
 ## Goals
 * separate logic in different JS files
+* turn the JavaScript code into TypeScript code
 * bundle the separate JS files using Vite
 * lint the code using ESLint
-* turn the JavaScript code into TypeScript code
