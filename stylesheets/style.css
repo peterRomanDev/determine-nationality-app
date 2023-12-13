@@ -49,7 +49,6 @@
     --width-sidebar-btn-toggle: 3rem;
     --width-dashboard-element: 18rem;
     --width-sidebar: 15rem;
-    /* --width-sidebar: var(--width-dashboard-element); */
     --width-list-of-users: var(--width-dashboard-element);
     --width-user-window: var(--width-dashboard-element);
     --width-img: 10rem;
@@ -71,7 +70,6 @@
     --fs-form-add-user__msg: var(--fs-100);
     --fs-admin-img: var(--fs-1000);
     --fs-btn-toggle: var(--fs-50);
-
     
     --gap-small: 0.5rem;
     --gap-mid: 1rem;
@@ -218,7 +216,7 @@ body {
     
     background-color: var(--clr-grey-100);
     border: 0;
-    border-radius: var(--br-5px);
+    border-radius: var(--br-5px) 0 0 var(--br-5px);
     
     color: var(--clr-grey-500);
     font-size: var(--fs-p);
@@ -228,6 +226,23 @@ body {
 }
 
 .list-of-users__user:hover {
+    background-color: var(--clr-accent-green);
+
+    cursor: pointer;
+}
+
+/* delete user button */
+.list-of-users__user-delete {
+    width: 3rem;
+    border: 0;
+    border-radius: 0 var(--br-5px) var(--br-5px) 0;
+    
+    background-color: var(--clr-grey-100);
+
+    transition: background-color 125ms;
+}
+
+.list-of-users__user-delete:hover {
     background-color: var(--clr-accent-green);
 
     cursor: pointer;
@@ -530,6 +545,10 @@ body {
 
 .list-of-users {
     position: relative;
+}
+
+.list-of-users__btn {
+    display: flex;
 }
 
 .form-add-user__msg {

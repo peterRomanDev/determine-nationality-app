@@ -49,9 +49,9 @@
 * storing users
     - [x] newly added user is stored in local storage
 * deleting users
-    - [] add an X button next to each user
-    - [] remove the user by clicking the X button
-    - [] remove the user from local storage
+    - [x] add an X button next to each user
+    - [x] remove the user by clicking the X button
+    - [x] remove the user from local storage
 * pages
     - [] add home page
     - [] make the home page load by default

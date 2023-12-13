@@ -74,7 +74,12 @@ const pushName = name => names.push(name);
 const updateListOfUsers = () => {
     const uniqueNames = [...new Set(names)].sort();
     const nameBtns = uniqueNames
-        .map(name => `<li><button class="list-of-users__user">${name}</button></li>`)
+        .map(name => `
+            <li class="list-of-users__btn">
+                <button class="list-of-users__user">${name}</button>
+                <button class="list-of-users__user-delete"><span class="fa-solid fa-x"></span></button>
+            </li>
+        `)
         .join('');
 
     listOfUsers.innerHTML = nameBtns;
@@ -86,3 +91,5 @@ export const addUser = name => {
     pushName(formattedName);
     updateListOfUsers();
 };
+
+export const deleteUser = user => user.remove();

@@ -1,9 +1,9 @@
 import { sidebar, showTooltipMsg, hideTooltipMsg, activateBtnToggle, deactivateBtnToggle, showDarkBg, hideDarkBg, openSidebar, closeSidebar, highlightClickedOption } from './sidebar.js';
 import { shrinkDashboard, extendDashboard, enableScrolling, disableScrolling } from './dashboard.js';
-import { highlightUserBtn, getUserInput, checkUserInput, showFeedbackNone, showFeedbackSuccess, showFeedbackError, clearUserInput, displayListOfUsers, addUser } from './list-of-users.js';
+import { highlightUserBtn, getUserInput, checkUserInput, showFeedbackNone, showFeedbackSuccess, showFeedbackError, clearUserInput, displayListOfUsers, addUser, deleteUser } from './list-of-users.js';
 import { showUserInfo } from './user-window.js';
 import { getUsers, getNationalities } from './data.js';
-import { storeUser, addStoredUsers } from './user-storage.js';
+import { storeUser, addStoredUsers, deleteStoredUser } from './user-storage.js';
 
 const app = document.querySelector('.app');
 
@@ -41,6 +41,13 @@ app.addEventListener('click', e => {
         
         // highlight the user button that is clicked
         highlightUserBtn(e.target.textContent);
+    }
+    else if(e.target.classList.contains('list-of-users__user-delete')) {
+        // remove the corresponding user name from the list of users
+        deleteUser(e.target.parentElement);
+
+        // remove the corresponding user from the local storage
+        deleteStoredUser(e.target.previousElementSibling.textContent);
     }
 });
 
@@ -170,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => data.forEach(user => addUser(user.name)))
         .catch(err => console.log(err.message));
 
-    // when the page loads, add the users stored in local storage to the list of users
+    // // add the users stored in local storage to the list of users
     addStoredUsers();
 
     // if the sidebar is hidden...
