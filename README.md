@@ -1,5 +1,7 @@
 # Determine Nationality App
 
+![Determine Nationality App preview](images/readme/determine-nationality-app-laptop.jpg)
+
 ## Table Of Contents
 
 * [Description](#description)
