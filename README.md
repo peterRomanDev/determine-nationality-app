@@ -1,4 +1,4 @@
-# SmallClaims Assignment
+# Determine Nationality App
 
 ## Table Of Contents
 
@@ -98,7 +98,7 @@ You can view the info by clicking on a user, or by submitting the form. The name
 
 In case you would like to provide feedback on this app, feel free to contact me at peter.roman24[at]gmail.com.
 
-Any feedback is appreciated as I am always trying to improve my skills and work.
+Any feedback is appreciated.
 
 ## Author
 
