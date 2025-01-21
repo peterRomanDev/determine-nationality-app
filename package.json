@@ -1,0 +1,20 @@
+{
+  "name": "determine-nationality-app",
+  "version": "1.0.0",
+  "description": "![Determine Nationality App preview](images/readme/determine-nationality-app-laptop.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterRomanDev/determine-nationality-app.git"
+  },
+  "keywords": [],
+  "author": "Peter Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterRomanDev/determine-nationality-app/issues"
+  },
+  "homepage": "https://github.com/peterRomanDev/determine-nationality-app#readme"
+}
