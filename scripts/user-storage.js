@@ -6,28 +6,34 @@ export const storeUser = name => {
     let storedUsersJSON = localStorage.getItem('storedUsers');
     const storedUsers = JSON.parse(storedUsersJSON);
 
-    storedUsers.push(formattedName);
-    
-    storedUsersJSON = JSON.stringify(storedUsers);
-    localStorage.setItem('storedUsers', storedUsersJSON);
+    if (storedUsers) {
+        storedUsers.push(formattedName);
+        
+        storedUsersJSON = JSON.stringify(storedUsers);
+        localStorage.setItem('storedUsers', storedUsersJSON);
+    }
 };
 
 export const addStoredUsers = () => {
     const storedUsersJSON = localStorage.getItem('storedUsers');
     const storedUsers = JSON.parse(storedUsersJSON);
     
-    storedUsers.forEach(user => addUser(user));
+    if (storedUsers) {
+        storedUsers.forEach(user => addUser(user));
+    }
 };
 
 export const deleteStoredUser = user => {
     let storedUsersJSON = localStorage.getItem('storedUsers');
     const storedUsers = JSON.parse(storedUsersJSON);
 
-    storedUsers.forEach((storedUser, index) => {
-        if(storedUser === user) {
-            storedUsers.splice(index, 1);
-        }
-    });
+    if (storedUsers) {
+        storedUsers.forEach((storedUser, index) => {
+            if(storedUser === user) {
+                storedUsers.splice(index, 1);
+            }
+        });
+    }
 
     storedUsersJSON = JSON.stringify(storedUsers);
     localStorage.setItem('storedUsers', storedUsersJSON);
