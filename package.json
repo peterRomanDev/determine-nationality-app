@@ -4,7 +4,8 @@
   "description": "![Determine Nationality App preview](images/readme/determine-nationality-app-laptop.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/peterRomanDev/determine-nationality-app/issues"
   },
-  "homepage": "https://github.com/peterRomanDev/determine-nationality-app#readme"
+  "homepage": "https://github.com/peterRomanDev/determine-nationality-app#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }
