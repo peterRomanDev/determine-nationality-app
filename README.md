@@ -18,9 +18,41 @@ This web application allows you to determine probable nationalities of users.
 
 ## How To Use The Application
 
-In order to use the application, simply open the index.html file. You will land on the home page of the portal.
+1. Cloning the repository
 
-Click "Manage Users" on the sidebar to view the list of users and the user information window. There are already some users in the list but you can add more by typing the name in the input field (only letters are allowed). When submitted, the name is added to the list and the information about probable nationalities is displayed. These nationalities are sorted from the most to the least probable.
+In order to run this application, start by cloning the repository.
+
+```
+git clone https://github.com/peterRomanDev/determine-nationality-app.git
+```
+
+2. Installing dependencies
+
+This application consists of HTML, CSS, and several JS files connected through ES modules. Therefore, opening the `index.html` file directly in the browser will result in CORS errors. This application can instead be served via a local development server.
+
+Navigate into your cloned repository and install the necessary dependencies, including a package `http-server`, which allows you to run a local development server.
+
+```
+npm install
+```
+
+If `http-server` or another local development server are already installed on your machine, you can skip this step.
+
+3. Running the application
+
+After installing the dependencies, start the local development server.
+
+```
+npx http-server
+```
+
+Click on the link provided by `http-server` in the terminal to run the application in your browser.
+
+If you already have a local development server installed on your machine, run it to serve this application.
+
+4. Using the application
+
+Within the application, you can click "Manage Users" on the sidebar to view the list of users and the user information window. There are already some users in the list but you can add more by typing the name in the input field (only letters are allowed). When submitted, the name is added to the list and the information about probable nationalities is displayed. These nationalities are sorted from the most to the least probable.
 
 You can view the info by clicking on a user, or by submitting the form. The names in the list of users are sorted alphabetically and remain there even after page reload, unless explicitly deleted by pressing the corresponsing X button (with the exception of the intial users, these will always be loaded in).
 
